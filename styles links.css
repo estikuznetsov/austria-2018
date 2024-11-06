@@ -1,0 +1,153 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: #e7e7e7; /* Light gray background */
+    color: #333; /* Darker text for good contrast */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items at the top */
+    padding: 0 20px; /* Horizontal padding for body */
+    margin: 0; /* Remove default margin from body */
+}
+
+/* Styling for Home Button */
+/* Styling for Home Button */
+.home-button {
+  position: absolute; /* Keep the button positioned absolutely */
+  top: 20px; /* Adjust to place it 20px from the top */
+  left: 20px; /* Place it 20px from the left */
+  font-size: 16px; /* Readable font size */
+  color: #fff; /* White text */
+  background-color: #888; /* Medium gray background */
+  text-decoration: none; /* Remove underline */
+  padding: 8px 16px; /* Padding for better clickability */
+  font-family: 'Arial', sans-serif; /* Clean font */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  z-index: 10; /* Make sure it's above other elements like the cubes */
+}
+
+.home-button:hover {
+  background-color: #666; /* Darker gray on hover */
+  transform: translateY(-2px); /* Slight "lift" effect on hover */
+}
+
+.home-button:active {
+  background-color: #555; /* Even darker gray when clicked */
+  transform: translateY(1px); /* Slight press effect when active */
+}
+
+
+/* Container for the grid layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 20px; /* Gap between cubes */
+    padding: 40px 20px; /* Adds space inside the container */
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box; /* Include padding in width/height */
+    margin-top: 30px; /* Add margin-top to move the grid down */
+}
+
+/* Styling each cube */
+.cube {
+    position: relative; /* Ensure proper overlay positioning */
+    background-color: #f9f9f9; /* Light background for fallback */
+    background-size: cover; /* Ensure the image covers the entire cube */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition of background */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    padding: 25px;
+    height: 300px; /* Fixed height to make sure the image shows */
+    text-align: left; /* Left-align the text for better readability */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    border: 1px solid #ddd; /* Light border for separation */
+    overflow: hidden; /* Prevent text from overflowing */
+}
+
+/* Hover Effect */
+.cube:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Deepened shadow on hover */
+}
+
+/* Adds an overlay to ensure text visibility */
+.cube::before {
+    content: ""; /* Add an empty pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure the overlay is behind the text */
+}
+
+/* Headings in the cubes */
+h3 {
+    position: relative; /* Ensure the heading is above the overlay */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff; /* White text to contrast with dark overlay */
+    font-weight: bold;
+    z-index: 2; /* Ensure the heading stays above the overlay */
+}
+
+/* Styling lists within cubes */
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative; /* Ensure the list appears above the overlay */
+    z-index: 2;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #fff; /* White list items to contrast with background */
+}
+
+a {
+    color: #b4a79b; /* Soft warm gray, visible over most backgrounds */
+    background-color: rgba(0, 0, 0, 0.3); /* Very subtle, transparent black background */
+    padding: 4px 8px; /* Padding around the link for readability */
+    text-decoration: none;
+    border-radius: 4px; /* Optional: adds rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    line-height: 1.4; /* Ensures proper vertical alignment within the link */
+    display: inline-block; /* Ensures padding and background don't mess with text layout */
+    vertical-align: middle; /* Vertically align with surrounding text */
+}
+
+a:hover {
+    color: #8d7c6b; /* Slightly darker gray on hover */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Stack cubes vertically */
+        grid-template-rows: auto;
+    }
+
+    .cube {
+        padding: 15px; /* Less padding on smaller screens */
+        height: auto; /* Remove fixed height on smaller screens */
+    }
+
+    h3 {
+        font-size: 1.3rem; /* Smaller font size for headings */
+    }
+}

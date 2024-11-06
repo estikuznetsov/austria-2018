@@ -1,0 +1,156 @@
+html, body {
+    height: 100%; /* Ensure both html and body take up 100% of the viewport height */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    background-image: url("images austria/about2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100%; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Styling for Home Button */
+.home-button {
+  position: fixed;
+  top: 15px; /* Distance from top */
+  left: 15px; /* Distance from left */
+  font-size: 16px; /* Readable font size */
+  color: #fff; /* White text */
+  background-color: #888; /* Medium gray background */
+  text-decoration: none; /* Remove underline */
+  padding: 8px 16px; /* Padding for better clickability */
+  font-family: 'Arial', sans-serif; /* Clean font */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.home-button:hover {
+  background-color: #666; /* Darker gray on hover */
+  transform: translateY(-2px); /* Slight "lift" effect on hover */
+}
+
+.home-button:active {
+  background-color: #555; /* Even darker gray when clicked */
+  transform: translateY(1px); /* Slight press effect when active */
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the entire container */
+    padding: 20px; /* Padding around the entire text block */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 45px;
+}
+
+h1, p {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: left;
+    margin: 0; /* Remove any margins between elements */
+    padding: 0; /* Remove padding so there's no extra space between the text and the background */
+}
+
+h1 {
+    margin-bottom: 10px; /* Adds a small gap between h1 and p */
+    font-size: 24px; /* Adjust font size for h1 */
+    line-height: 1.4; /* Add spacing between lines in h1 */
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    font-size: 16px; /* Font size for paragraph */
+    line-height: 1.6; /* Add spacing between lines in p */
+    margin-top: 10px; /* Adds space between h1 and p */
+    font-family: 'Playfair Display', serif;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  /* Reduce the size of the home button on tablets */
+  .home-button {
+    font-size: 14px; /* Slightly smaller font for tablets */
+    padding: 6px 12px; /* Adjust padding for smaller devices */
+  }
+
+  /* Adjust the container width to fit smaller devices */
+  .container {
+    padding: 15px; /* Reduced padding for smaller devices */
+    margin-top: 30px; /* Adjust the margin for better spacing */
+  }
+
+  /* Adjust h1 and p font sizes */
+  h1 {
+    font-size: 22px; /* Slightly smaller font size for tablets */
+  }
+
+  p {
+    font-size: 14px; /* Adjust paragraph font size for readability */
+  }
+}
+
+/* For smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Make the home button smaller and adjust its position */
+  .home-button {
+    font-size: 12px; /* Smaller font size */
+    padding: 5px 10px; /* Adjust padding */
+    top: 10px; /* Adjust position */
+    left: 10px; /* Adjust position */
+  }
+
+  /* Make the container take more space with reduced margins */
+  .container {
+    padding: 12px; /* Smaller padding */
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  /* Further adjust font size for smaller devices */
+  h1 {
+    font-size: 20px; /* Smaller heading for mobile screens */
+  }
+
+  p {
+    font-size: 12px; /* Adjust paragraph text for mobile */
+  }
+}
+
+/* For very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Make home button even smaller */
+  .home-button {
+    font-size: 10px; /* Even smaller font */
+    padding: 4px 8px; /* Reduce padding */
+    top: 5px; /* Adjust for smaller screen */
+    left: 5px; /* Adjust for smaller screen */
+  }
+
+  /* Adjust container layout */
+  .container {
+    padding: 10px; /* Reduced padding for very small screens */
+    margin-top: 10px; /* Adjust margin to fit content */
+  }
+
+  /* Further reduce font size for h1 and p */
+  h1 {
+    font-size: 18px; /* Small heading for mobile */
+  }
+
+  p {
+    font-size: 10px; /* Small paragraph text for mobile */
+  }
+}
